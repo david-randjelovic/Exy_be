@@ -39,4 +39,14 @@ class ExpenseController extends Controller
 
         return response()->json($expense, 201);
     }
+
+    public function destroy($id, DashboardController $dashboardController)
+    {
+        $expense = Expense::findOrFail($id);
+        $expense->delete();
+
+        $dashboardData = $dashboardController->getDashboardData()->getData();
+
+        return response()->json($dashboardData);
+    }
 }

@@ -20,7 +20,7 @@ class Expense extends Model
     ];
 
     protected $casts = [
-        'cost' => 'decimal:2',
+        'cost' => 'float',
         'payment_date' => 'date',
     ];
 }

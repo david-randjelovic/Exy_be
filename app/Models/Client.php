@@ -10,6 +10,16 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'company', 'price', 'yearly_maintenance', 'payment_date', 'status'
+        'name', 
+        'company', 
+        'price', 
+        'yearly_maintenance', 
+        'payment_date', 
+        'status'
+    ];
+
+    protected $casts = [
+        'price' => 'float',
+        'yearly_maintenance' => 'float',
     ];
 }
